@@ -1,0 +1,16 @@
+
+<div id='map' style='width: 100%; height: 500px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibmF0YWxpYWdhdHRpIiwiYSI6ImNraTc5Mms0bjA3bDgzNG4waTIzanI1ZDUifQ.aZGDa771gB1VlANg9CisVw';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+  center: [-74.5, 40], // starting position [lng, lat]
+  zoom: 9 // starting zoom
+});
+var marker = new mapboxgl.Marker({
+  color: "red",
+  draggable: true
+  }).setLngLat([-74.5, 40])
+  .addTo(map);
+</script>

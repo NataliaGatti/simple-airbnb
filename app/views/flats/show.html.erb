@@ -1,0 +1,53 @@
+<%= render "components/navbar" %>
+
+<%= render "components/banner" %>
+
+<div class="container position-description">
+  <div class="d-flex p-3">
+    <div style="width:700px; height: 125px">
+      <div class="bg-light shadow p-3 mb-3">
+        <h2><%= @flat.name %></h2>
+        <h3><%= @flat.address %></h3>
+      </div>
+      <div class="bg-light shadow p-3 mb-3">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
+        <div class="position-relative"><%= render "components/map" %></div>
+      </div>
+      <div class="bg-light shadow p-3 mb-3">
+        <h3>Details</h3>
+        <div class="d-flex">
+          <p class="p-2"><i class="fas fa-user-friends"></i>    <%= @flat.number_of_guests %></p>
+          <p class="p-2"><i class="fas fa-euro-sign"></i>   <%= @flat.price_per_night %></p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="bg-light p-3 ml-5 shadow">
+        <h3>Book this place!</h3>
+        <div class="input-group flex-nowrap my-2">
+          <span class="input-group-text" id="addon-wrapping">From:</span>
+          <input type="text" class="form-control" placeholder="07/02/2021" aria-label="Date" aria-describedby="addon-wrapping">
+        </div>
+        <div class="input-group flex-nowrap my-2">
+          <span class="input-group-text pr-4" id="addon-wrapping">To:</span>
+          <input type="text" class="form-control" placeholder="15/02/2021" aria-label="Date" aria-describedby="addon-wrapping">
+        </div>
+        <button type="button" class="btn btn-success my-2" style="width:100%">Book</button>
+      </div>
+      <div class="d-flex justify-content-between mt-3 ml-5 p-3 bg-light shadow">
+        <h5>Share</h5>
+        <div class="d-flex">
+          <a href="#"><i class="fab fa-facebook-square pr-1 fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter-square pr-1 fa-2x"></i></a>
+          <a href="#"><i class="fab fa-pinterest-square pr-1 fa-2x"></i></a>
+          <a href="#"><i class="fas fa-envelope-square pr-1 fa-2x"></i></a>
+        </div>
+      </div>
+      <div class="d-flex mt-3 ml-5 p-3 bg-light shadow">
+        <%= link_to "Edit", edit_flat_path(@flat), class:"pr-3 text-warning fw-bold fs-2"  %>
+        <%= link_to "Remove", flat_path(@flat), method: :delete, data: { confirm: "Are you sure to remove this flat?" }, class:"text-danger fw-bold fs-2"  %>
+      </div>  
+    </div>
+  </div>
+</div>

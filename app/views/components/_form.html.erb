@@ -1,0 +1,11 @@
+<div class="container mt-3">
+  <%= simple_form_for flat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price_per_night, as: :integer %>
+    <%= f.input :number_of_guests, as: :integer %>
+    <%= f.input :photo %>
+    <%= f.button :submit, class:"btn btn-dark" %>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="bg-light">
+  <div class="d-flex justify-content-between mx-5 py-3">
+    <h2><%= link_to "Simple Airbnb", flats_path, class:"text-decoration-none text-dark"%></h2>
+    <div class="d-flex">
+      <%= render "components/search_form" %>
+      <%= link_to "Add Flat", new_flat_path, class:"btn btn-outline-primary p-3 fw-bolder ml-3"  %>
+    </div>
+  </div>
+</div>

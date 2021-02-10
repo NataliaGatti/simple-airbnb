@@ -1,0 +1,10 @@
+<div class="d-flex">
+  <%= form_tag flats_path, class:"d-flex", method: :get do %>
+    <%= text_field_tag :query, 
+      params[:query],
+      class: "form-control p-3", style:"height: 100%",
+      placeholder: "Find your next place to visit"
+    %>
+    <%= submit_tag "Search", class: "btn btn-outline-success ml-2 px-3" %>
+  <% end %>
+</div>
